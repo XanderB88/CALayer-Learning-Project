@@ -16,15 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-SD-ZbT">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="agw-D2-Zfu"/>
-                                    <constraint firstAttribute="height" constant="200" id="q4D-MS-dOC"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmr-Tx-5JG">
-                                <rect key="frame" x="157" y="736" width="100" height="40"/>
+                                <rect key="frame" x="174.5" y="752" width="65.5" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Hde-lj-1NQ"/>
                                 </constraints>
@@ -36,15 +29,21 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-SD-ZbT">
+                                <rect key="frame" x="107" y="127" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="agw-D2-Zfu"/>
+                                    <constraint firstAttribute="height" constant="200" id="q4D-MS-dOC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Gmr-Tx-5JG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="J0L-jB-nHM"/>
-                            <constraint firstItem="Gmr-Tx-5JG" firstAttribute="centerX" secondItem="iqN-SD-ZbT" secondAttribute="centerX" id="Teb-gG-Juo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gmr-Tx-5JG" secondAttribute="bottom" constant="86" id="dOQ-sq-gtx"/>
-                            <constraint firstItem="iqN-SD-ZbT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gaL-RM-c0k"/>
-                            <constraint firstItem="iqN-SD-ZbT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ucY-Uz-jBR"/>
+                            <constraint firstItem="iqN-SD-ZbT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FUY-Bw-khP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gmr-Tx-5JG" secondAttribute="bottom" constant="70" id="IJl-0l-n4P"/>
+                            <constraint firstItem="iqN-SD-ZbT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="Jo1-Fd-TdM"/>
+                            <constraint firstItem="Gmr-Tx-5JG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Zb6-0r-9V4"/>
                         </constraints>
                     </view>
                     <connections>
@@ -59,8 +58,8 @@
     </scenes>
     <resources>
         <image name="3" width="64" height="64"/>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
