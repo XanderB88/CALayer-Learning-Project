@@ -9,18 +9,24 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var profileImage: UIImageView! {
-        didSet {
-            profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-            profileImage.layer.borderColor = UIColor.gray.cgColor
-            profileImage.layer.borderWidth = 5
+    // MARK: - Properties
+    var shapeLayer: CAShapeLayer! {
+        didSet{
+            shapeLayer.lineWidth = 20
+            shapeLayer.lineCap = .round
+            shapeLayer.fillColor = nil
+            shapeLayer.strokeEnd = 1
+            shapeLayer.strokeColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1).cgColor
         }
     }
-    @IBOutlet weak var profileButton: UIButton! {
-        didSet {
-            profileButton.layer.cornerRadius = 5
-            profileButton.layer.shadowOpacity = 0.7
-            profileButton.layer.shadowOffset = CGSize(width: -2, height: 5)
+    
+    var overShapeLayer: CAShapeLayer! {
+        didSet{
+            overShapeLayer.lineWidth = 20
+            overShapeLayer.lineCap = .round
+            overShapeLayer.fillColor = nil
+            overShapeLayer.strokeEnd = 0
+            overShapeLayer.strokeColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor
         }
     }
     
@@ -35,15 +41,64 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+    // MARK: - IBOutlets
+    @IBOutlet weak var profileImage: UIImageView! {
+        didSet {
+            profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
+            profileImage.layer.borderColor = UIColor.gray.cgColor
+            profileImage.layer.borderWidth = 5
+        }
     }
-   
+    
+    @IBOutlet weak var profileButton: UIButton! {
+        didSet {
+            profileButton.layer.cornerRadius = 5
+            profileButton.layer.shadowOpacity = 0.7
+            profileButton.layer.shadowOffset = CGSize(width: -2, height: 5)
+        }
+    }
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         gradientLayer = CAGradientLayer()
         view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        shapeLayer = CAShapeLayer()
+        view.layer.addSublayer(shapeLayer)
+        
+        overShapeLayer = CAShapeLayer()
+        view.layer.addSublayer(overShapeLayer)
     }
     
+    override func viewDidLayoutSubviews() {
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+        
+        setupShapeLayer(shapeLayer)
+        setupShapeLayer(overShapeLayer)
+    }
+    
+    // MARK: - Methods
+    fileprivate func setupShapeLayer(_ shapeLayer: CAShapeLayer) {
+        shapeLayer.frame = view.bounds
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2))
+        path.addLine(to: CGPoint(x: self.view.frame.width / 2 + 100, y: self.view.frame.height / 2))
+        shapeLayer.path = path.cgPath
+    }
+    
+    // MARK: - IBActions
+    @IBAction func profileButtonPressed(_ sender: UIButton) {
+        DispatchQueue.main.async {
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.loadProfile), userInfo: nil, repeats: true)
+        }
+        
+    }
+    
+    @objc func loadProfile() {
+                self.overShapeLayer.strokeEnd += 0.1
+    }
 }
+
+
 
