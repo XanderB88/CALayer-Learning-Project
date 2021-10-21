@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     // MARK: - Properties
     var shapeLayer: CAShapeLayer! {
-        didSet{
+        didSet {
             shapeLayer.lineWidth = 20
             shapeLayer.lineCap = .round
             shapeLayer.fillColor = nil
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     var overShapeLayer: CAShapeLayer! {
-        didSet{
+        didSet {
             overShapeLayer.lineWidth = 20
             overShapeLayer.lineCap = .round
             overShapeLayer.fillColor = nil
@@ -89,14 +89,22 @@ class ViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func profileButtonPressed(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.loadProfile), userInfo: nil, repeats: true)
-        }
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.toValue = 1
+        animation.duration = 3
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        animation.fillMode = CAMediaTimingFillMode.both
+        animation.isRemovedOnCompletion = false
         
+        animation.delegate = self
+        
+        overShapeLayer.add(animation, forKey: nil)
     }
-    
-    @objc func loadProfile() {
-                self.overShapeLayer.strokeEnd += 0.1
+}
+
+extension ViewController: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        //Some actions that you want to do after an animation will be stopped
     }
 }
 
