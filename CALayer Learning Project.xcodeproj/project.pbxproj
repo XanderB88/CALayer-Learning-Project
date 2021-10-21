@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116C24052720FB3A009DB609 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C24042720FB3A009DB609 /* SecondViewController.swift */; };
 		1173BA31271E579C0078EF2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173BA30271E579C0078EF2D /* AppDelegate.swift */; };
 		1173BA33271E579C0078EF2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173BA32271E579C0078EF2D /* SceneDelegate.swift */; };
 		1173BA35271E579C0078EF2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173BA34271E579C0078EF2D /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		116C24042720FB3A009DB609 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1173BA2D271E579C0078EF2D /* CALayer Learning Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CALayer Learning Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1173BA30271E579C0078EF2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1173BA32271E579C0078EF2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				1173BA44271E57B10078EF2D /* Application */,
 				1173BA34271E579C0078EF2D /* ViewController.swift */,
+				116C24042720FB3A009DB609 /* SecondViewController.swift */,
 				1173BA46271E58320078EF2D /* IBuilder */,
 				1173BA45271E57CE0078EF2D /* Supporting files */,
 				1173BA3B271E57A10078EF2D /* LaunchScreen.storyboard */,
@@ -164,6 +167,7 @@
 			files = (
 				1173BA35271E579C0078EF2D /* ViewController.swift in Sources */,
 				1173BA31271E579C0078EF2D /* AppDelegate.swift in Sources */,
+				116C24052720FB3A009DB609 /* SecondViewController.swift in Sources */,
 				1173BA33271E579C0078EF2D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

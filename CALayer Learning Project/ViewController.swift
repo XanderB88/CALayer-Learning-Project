@@ -104,7 +104,7 @@ class ViewController: UIViewController {
 
 extension ViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        //Some actions that you want to do after an animation will be stopped
+        performSegue(withIdentifier: "showSecondScreen", sender: nil)
     }
 }
 
